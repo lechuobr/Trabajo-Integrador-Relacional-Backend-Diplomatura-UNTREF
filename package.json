@@ -1,0 +1,16 @@
+{
+  "name": "trabajo-integrador-relacional-backend-diplomatura-untref",
+  "version": "1.0.0",
+  "description": "crud sequlize mysql",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jesus obregoso",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0",
+    "mysql2": "^3.11.3",
+    "sequelize": "^6.37.4"
+  }
+}

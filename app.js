@@ -1,15 +1,19 @@
-const express = require('express');
-const app = express();
-const contenidoRoutes = require('./routes/contenidoRoutes');
-const db = require('./conexion/database');
+process.loadEnvFile()
+const port=process.env.PORT
+const express =require('express')
+const app = express()
+const Allcontenido =require('./routes/RoutProdut.js')
 
-// Middlewares
-app.use(express.json());
-app.use('/contenido', contenidoRoutes);
+app.use(express.json())
 
-// Server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-    
+app.get('/contenido',Allcontenido)
+app.get('/contenido/:ID',Allcontenido)
+app.get('/contenido/:campo/:valor',Allcontenido)
+
+app.use((req,res)=>{
+    res.status(400).json({mensaje:"Error 400"})
+})
+
+app.listen(port, () => {
+  console.log('puerto open')
+})
