@@ -1,0 +1,33 @@
+POST http://localhost:3000/contenido
+Content-Type: application/json
+
+{
+    "id": 71,
+      "poster": "./posters/71.jpg",
+      "titulo": "Misión Imposible",
+      "categoria": "Película",
+      "gen": "Acción",
+      "genero": "Drama, Acción, Romance",
+      "busqueda": "Drama, Acción, Romance, Misión Imposible, misión imposible, mission impossible, Mission Impossible, Tom Cruise, Jon Voight, Emmanuelle Béart, Henry Czerny, Jean Reno, Ving Rhames, Kristin Scott Thomas, Vanessa Redgrave, Ingeborga Dapkünaitè",
+      "resumen": "Ethan Hunt es un superespía capaz de resolver cualquier arriesgada situación con la máxima elegancia. Forma parte de un competente equipo dirigido por el agente Jim Phelps, que ha vuelto a reunir a sus hombres para participar en una dificilísima misión: evitar la venta de un disco robado que contiene información secreta de vital importancia.",
+      "temporadas": "N/A",
+      "duracion": "110 minutos",
+      "reparto": "Tom Cruise, Jon Voight, Emmanuelle Béart, Henry Czerny, Jean Reno, Ving Rhames, Kristin Scott Thomas, Vanessa Redgrave, Ingeborga Dapkünaitè",
+      "trailer": "https://www.youtube.com/embed/Ohws8y572KE"
+}
+
+###
+
+PATCH  http://localhost:3000/contenido/4
+Content-Type: application/json
+
+{
+ 
+ "titulo":"jesus salve"
+ 
+  
+            
+}
+
+###
+DELETE http://localhost:3000/contenido/6

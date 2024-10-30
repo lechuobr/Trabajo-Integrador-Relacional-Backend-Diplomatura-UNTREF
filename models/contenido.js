@@ -9,19 +9,20 @@ const contenido=sequelize.define('contenido',{
     autoIncrement: true,
   },
   titulo: {
-    type: DataTypes.STRING(25),
+    type: DataTypes.STRING(50),
     allowNull: false,
   },
-  Temporada: {
+  temporada: {
     type: DataTypes.INTEGER,
-    allowNull: false,
-    default: 1,
+    allowNull: true,
+    defaultValue:'N/A',
   },
-  Resumen: {
-    type: DataTypes.STRING(512),
+  resumen: {
+    type: DataTypes.STRING(1000),
     allowNull: false,
       },
-  Poster: {
+  
+  poster: {
     type: DataTypes.STRING(30),
     allowNull: false,
       },
@@ -33,7 +34,7 @@ const contenido=sequelize.define('contenido',{
     type: DataTypes.INTEGER,
     allowNull: false,
       },
-    Trailer: {
+    trailer: {
     type: DataTypes.STRING(50),
     allowNull: false,
     default: 0,
@@ -43,8 +44,8 @@ const contenido=sequelize.define('contenido',{
     allowNull: false,
     default: 1,
   },
-  Duracion: {
-    type: DataTypes.DECIMAL,
+  duracion: {
+    type: DataTypes.STRING(10),
     allowNull: true,
     default: 0,
   },
@@ -54,6 +55,7 @@ const contenido=sequelize.define('contenido',{
   timestamps: false,
     
 })
+
 
 module.exports={contenido}
   

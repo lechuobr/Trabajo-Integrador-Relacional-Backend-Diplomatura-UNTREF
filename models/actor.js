@@ -3,12 +3,12 @@ const {DataTypes} = require ('sequelize');
 const {sequelize}=require('../conexion/database.js')
 
 const Actor= sequelize.define('actor',{
-     Actor_ID: {
+     Actor_Id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    Actor_Name: {
+    ActorName: {
         type: DataTypes.STRING(45),
         allowNull: false,
       },
