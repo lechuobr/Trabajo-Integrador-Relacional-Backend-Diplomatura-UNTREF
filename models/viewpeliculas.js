@@ -13,9 +13,9 @@ const viewpelis=sequelize.define('peliculas',{
     allowNull: false,
   },
   Temporada: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    default: 1,
+    type: DataTypes.STRING,
+    allowNull: true,
+    defaultValue:'N/A',
   },
   Resumen: {
     type: DataTypes.STRING(512),

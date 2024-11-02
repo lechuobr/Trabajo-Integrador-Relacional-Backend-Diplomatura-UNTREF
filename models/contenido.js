@@ -13,7 +13,7 @@ const contenido=sequelize.define('contenido',{
     allowNull: false,
   },
   temporada: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: true,
     defaultValue:'N/A',
   },

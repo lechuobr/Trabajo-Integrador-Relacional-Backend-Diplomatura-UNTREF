@@ -1,4 +1,3 @@
-const { Types } = require ('mysql2');
 const swaggerJsdoc=require ('swagger-jsdoc');
 const swaggerUi=require ('swagger-ui-express');
 

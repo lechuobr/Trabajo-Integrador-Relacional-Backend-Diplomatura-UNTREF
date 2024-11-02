@@ -2,32 +2,32 @@ POST http://localhost:3000/contenido
 Content-Type: application/json
 
 {
-    "id": 71,
-      "poster": "./posters/71.jpg",
-      "titulo": "Misión Imposible",
+      "id": 7,
+      "poster": "./posters/7.jpg",
+      "titulo": "Guasón",
       "categoria": "Película",
-      "gen": "Acción",
-      "genero": "Drama, Acción, Romance",
-      "busqueda": "Drama, Acción, Romance, Misión Imposible, misión imposible, mission impossible, Mission Impossible, Tom Cruise, Jon Voight, Emmanuelle Béart, Henry Czerny, Jean Reno, Ving Rhames, Kristin Scott Thomas, Vanessa Redgrave, Ingeborga Dapkünaitè",
-      "resumen": "Ethan Hunt es un superespía capaz de resolver cualquier arriesgada situación con la máxima elegancia. Forma parte de un competente equipo dirigido por el agente Jim Phelps, que ha vuelto a reunir a sus hombres para participar en una dificilísima misión: evitar la venta de un disco robado que contiene información secreta de vital importancia.",
+      "gen": "Suspenso",
+      "genero": "Crimen, Suspenso",
+      "busqueda": "Guasón, The Joker, Crimen, Suspenso, Drama, DC Comics, Joaquin Phoenix, Robert De Niro, Zazie Beetz, Frances Conroy, Brett Cullen, Shea Whigham",
+      "resumen": "Arthur Fleck (Phoenix) es un hombre ignorado por la sociedad, cuya motivación en la vida es hacer reír. Pero una Serie de trágicos acontecimientos le llevarán a ver el mundo de otra forma. Película basada en el popular personaje de DC Comics Joker, conocido como archivillano de Batman, pero que en este film tomará un cariz más realista y oscuro.",
       "temporadas": "N/A",
-      "duracion": "110 minutos",
-      "reparto": "Tom Cruise, Jon Voight, Emmanuelle Béart, Henry Czerny, Jean Reno, Ving Rhames, Kristin Scott Thomas, Vanessa Redgrave, Ingeborga Dapkünaitè",
-      "trailer": "https://www.youtube.com/embed/Ohws8y572KE"
+      "duracion": "97 minutos",
+      "reparto": "Joaquin Phoenix, Robert De Niro, Zazie Beetz, Frances Conroy, Brett Cullen, Shea Whigham",
+      "trailer": "https://www.youtube.com/embed/zAGVQLHvwOY"
 }
 
 ###
 
-PATCH  http://localhost:3000/contenido/4
+PATCH  http://localhost:3000/contenido/17
 Content-Type: application/json
 
 {
  
- "titulo":"jesus salve"
+ "reparto":"jesus obregoso,juli garcia,aron nievas"
  
   
             
 }
 
 ###
-DELETE http://localhost:3000/contenido/6
+DELETE http://localhost:3000/contenido/14

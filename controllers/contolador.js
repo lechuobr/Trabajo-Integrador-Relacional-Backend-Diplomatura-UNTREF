@@ -13,24 +13,32 @@ const app = express()
 app.use(express.json())
 
 
-app.use(async(req,res,next)=>{
+async function initializeDatabase() {
     try {
-          await sequelize.authenticate()
-          console.log('conexion exitosa')
-          await contenido.sync()
-          await Categoria.sync()
-          await Genero.sync()
-          await viewpelis.sync()
-          await contenidoActor.sync()
-          await GenerosContenido.sync()
-          
-           next()
+      await sequelize.authenticate();
+      console.log('Conexión a la base de datos exitosa');
+       await contenido.sync();
+       await Categoria.sync();
+      await Genero.sync();
+      await viewpelis.sync();
+      await contenidoActor.sync();
+      await GenerosContenido.sync();
+  
+      console.log('Modelos sincronizados correctamente');
     } catch (error) {
-        res.status(500).json({mensaje:"error de acceso a la ddbb"})
+      console.error('Error de acceso a la base de datos:', error);
+      process.exit(1);
     }
+  }
+  
+  
+  initializeDatabase();
+
+  app.use((req, res, next) => {
+    next(); 
   });
 
-const allProducts=async(req, res) => {
+  const allProducts=async(req, res) => {
         try {
            
             const Allproduct=await viewpelis.findAll(/*{offset:0,limit:5}*/)

@@ -1,14 +1,12 @@
-process.loadEnvFile()
-const port=process.env.PORT
+
+const port=process.env.PORT || 3000
 const express = require('express')
 const app = express()
 const Allcontenido =require('./routes/RoutProdut.js')
 const { swaggerUi, swaggerDocs } = require('./utilid/swaggerConfigc.js')
 
-
 app.use(express.json())
 app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerDocs))
-
 app.get('/contenido',Allcontenido)
 app.get('/contenido/:ID',Allcontenido)
 app.get('/contenido/:campo/:valor',Allcontenido)
