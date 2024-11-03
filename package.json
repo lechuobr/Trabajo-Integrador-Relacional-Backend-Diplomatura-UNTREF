@@ -1,7 +1,6 @@
 {
-  "name": "appi-ress-Relacional",
+  "name": "appi-ress-relacional",
   "version": "1.0.0",
-  "description": "crud sequlize mysql",
   "main": "app.js",
   "scripts": {
     "start:local": "cross-env NODE_ENV=local node app.js",
@@ -9,16 +8,20 @@
     "start": "cross-env NODE_ENV=production node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "jesus obregoso",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
-    "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
-    "express": "^4.21.0",
+    "express": "^4.21.1",
     "express-validator": "^7.2.0",
     "mysql2": "^3.11.3",
-    "sequelize": "^6.37.4",
+    "sequelize": "^6.37.5",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
