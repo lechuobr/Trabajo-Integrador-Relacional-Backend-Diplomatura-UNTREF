@@ -1,5 +1,5 @@
 {
-  "name": "trabajo-integrador-relacional-backend-diplomatura-untref",
+  "name": "appi-ress-Relacional",
   "version": "1.0.0",
   "description": "crud sequlize mysql",
   "main": "app.js",
