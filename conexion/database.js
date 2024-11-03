@@ -11,7 +11,7 @@ const sequelize = new Sequelize(
     {
       host: process.env.HOST,
       port: process.env.PORT,
-      dialect: process.env.DIALECT,
+      dialect:'mysql',
       pool: {
         max: 5,
         min: 0,
