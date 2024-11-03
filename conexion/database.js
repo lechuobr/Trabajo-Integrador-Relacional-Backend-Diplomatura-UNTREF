@@ -11,17 +11,17 @@ const sequelize = new Sequelize(
     {
       host: process.env.HOST,
       port: process.env.PORT,
-      dialect: process.env.DIALECT,
+      dialect:'mysql',
       pool: {
         max: 5,
         min: 0,
-        acquire: 60000, // Aumenta el tiempo de espera de adquisición a 60 segundos
+        acquire: 100000, 
         idle: 10000
       },
       dialectOptions: {
-        connectTimeout: 60000 // Aumenta el tiempo de espera de conexión a 60 segundos
+        connectTimeout: 100000 
       },
-      logging: false // Opcional: desactiva el registro de consultas SQL en consola
+      logging: console.log
     }
   );
 

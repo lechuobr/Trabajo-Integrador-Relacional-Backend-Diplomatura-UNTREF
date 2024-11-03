@@ -1,33 +1,31 @@
-POST http://localhost:3000/contenido
+POST http://localhost:3001/contenido
 Content-Type: application/json
 
 {
-      "id": 7,
-      "poster": "./posters/7.jpg",
-      "titulo": "Guasón",
-      "categoria": "Película",
-      "gen": "Suspenso",
-      "genero": "Crimen, Suspenso",
-      "busqueda": "Guasón, The Joker, Crimen, Suspenso, Drama, DC Comics, Joaquin Phoenix, Robert De Niro, Zazie Beetz, Frances Conroy, Brett Cullen, Shea Whigham",
-      "resumen": "Arthur Fleck (Phoenix) es un hombre ignorado por la sociedad, cuya motivación en la vida es hacer reír. Pero una Serie de trágicos acontecimientos le llevarán a ver el mundo de otra forma. Película basada en el popular personaje de DC Comics Joker, conocido como archivillano de Batman, pero que en este film tomará un cariz más realista y oscuro.",
-      "temporadas": "N/A",
-      "duracion": "97 minutos",
-      "reparto": "Joaquin Phoenix, Robert De Niro, Zazie Beetz, Frances Conroy, Brett Cullen, Shea Whigham",
-      "trailer": "https://www.youtube.com/embed/zAGVQLHvwOY"
+      "id": 4,
+      "poster": "./posters/4.jpg",
+      "titulo": "The Umbrella Academy",
+      "categoria": "Serie",
+      "gen": "Ciencia Ficción",
+      "genero": "Sci-Fi, Fantasía, Drama",
+      "busqueda": "The Umbrella Academy, Sci-Fi, Fantasía, Drama, Tom Hopper, David Castañeda, Emmy Raver-Lampman, Robert Sheehan, Aidan Gallagher, Elliot Page",
+      "resumen": "La muerte de su padre reúne a unos hermanos distanciados y con extraordinarios poderes que descubren impactantes secretos y una amenaza que se cierne sobre la humanidad.",
+      "temporadas": 1,
+      "reparto": "Tom Hopper, David Castañeda, Emmy Raver-Lampman, Robert Sheehan, Aidan Gallagher, Elliot Page",
+      "trailer": "https://www.youtube.com/embed/KHucKOK-Vik"
 }
 
 ###
 
-PATCH  http://localhost:3000/contenido/17
+PATCH  http://localhost:3001/contenido/1
 Content-Type: application/json
 
 {
  
- "reparto":"jesus obregoso,juli garcia,aron nievas"
- 
+ "titulo":"3000"
   
             
 }
 
 ###
-DELETE http://localhost:3000/contenido/14
+DELETE http://localhost:3000/contenido/1

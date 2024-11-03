@@ -22,7 +22,8 @@ async function initializeDatabase() {
       await Genero.sync();
       await viewpelis.sync();
       await contenidoActor.sync();
-      await GenerosContenido.sync();
+      await GenerosContenido.sync()
+      await Actor.sync();
   
       console.log('Modelos sincronizados correctamente');
     } catch (error) {
