@@ -253,10 +253,10 @@
 /**
  * @swagger
  * /contenido/{ID}:
- *   put:
+ *   patch:
  *     summary: Actualiza un contenido existente
  *     tags: [Productos]
- *     description: Permite actualizar los detalles de una película o serie en la base de datos utilizando su ID.
+ *     description: Permite actualizar los detalles de una película o serie en la base de datos utilizando su ID. Se pueden actualizar campos como título, búsqueda, resumen, temporadas, tráiler, duración, poster, género, categoría y reparto.
  *     parameters:
  *       - name: ID
  *         in: path
@@ -273,25 +273,25 @@
  *             properties:
  *               titulo:
  *                 type: string
- *                 description: Título del contenido.
+ *                 description: Título del contenido (mínimo 4 caracteres).
  *               busqueda:
  *                 type: string
- *                 description: Término de búsqueda asociado.
+ *                 description: Término de búsqueda asociado (mínimo 4 caracteres).
  *               resumen:
  *                 type: string
- *                 description: Resumen del contenido.
+ *                 description: Resumen del contenido (mínimo 4 caracteres).
  *               temporadas:
  *                 type: string
  *                 description: Número de temporadas o 'N/A'.
  *               trailer:
  *                 type: string
- *                 description: URL del tráiler.
+ *                 description: URL del tráiler (debe ser una URL válida).
  *               duracion:
- *                 type: string
+ *                 type: integer
  *                 description: Duración del contenido en minutos.
  *               poster:
  *                 type: string
- *                 description: URL de la imagen del póster.
+ *                 description: URL de la imagen del póster (debe ser una URL de imagen).
  *               genero:
  *                 type: string
  *                 description: Género del contenido (separados por comas).
@@ -304,11 +304,36 @@
  *     responses:
  *       200:
  *         description: Contenido actualizado con éxito.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensaje:
+ *                   type: string
+ *                   example: "Contenido actualizado con éxito."
  *       400:
  *         description: Solicitud mal formulada o contenido no encontrado.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensaje:
+ *                   type: string
+ *                   example: "El título es inválido."
  *       500:
  *         description: Error de acceso a la base de datos.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensaje:
+ *                   type: string
+ *                   example: "Error de acceso a la base de datos."
  */
+
 
 /**
  * @swagger
