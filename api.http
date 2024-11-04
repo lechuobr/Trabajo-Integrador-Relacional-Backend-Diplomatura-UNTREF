@@ -2,17 +2,17 @@ POST http://localhost:3001/contenido
 Content-Type: application/json
 
 {
-      "id": 4,
-      "poster": "./posters/4.jpg",
-      "titulo": "The Umbrella Academy",
+      "id": 3,
+      "poster": "./posters/3.jpg",
+      "titulo": "The Mandalorian",
       "categoria": "Serie",
+      "genero": "Sci-Fi, Fantasía, Acción",
       "gen": "Ciencia Ficción",
-      "genero": "Sci-Fi, Fantasía, Drama",
-      "busqueda": "The Umbrella Academy, Sci-Fi, Fantasía, Drama, Tom Hopper, David Castañeda, Emmy Raver-Lampman, Robert Sheehan, Aidan Gallagher, Elliot Page",
-      "resumen": "La muerte de su padre reúne a unos hermanos distanciados y con extraordinarios poderes que descubren impactantes secretos y una amenaza que se cierne sobre la humanidad.",
-      "temporadas": 1,
-      "reparto": "Tom Hopper, David Castañeda, Emmy Raver-Lampman, Robert Sheehan, Aidan Gallagher, Elliot Page",
-      "trailer": "https://www.youtube.com/embed/KHucKOK-Vik"
+      "busqueda": "The Mandalorian, Sci-Fi, Fantasía, Suspenso, Pedro Pascal, Carl Weathers, Misty Rosas, Chris Bartlett, Rio Hackford, Giancarlo Esposito",
+      "resumen": "Ambientada tras la caída del Imperio y antes de la aparición de la Primera Orden, la Serie sigue los pasos de un pistolero solitario en las aventuras que protagoniza en los confines de la galaxia, donde no alcanza la autoridad de la Nueva República.",
+      "temporadas": 2,
+      "reparto": "Pedro Pascal, Carl Weathers, Misty Rosas, Chris Bartlett, Rio Hackford, Giancarlo Esposito",
+      "trailer": "https://www.youtube.com/embed/aOC8E8z_ifw"
 }
 
 ###
