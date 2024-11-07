@@ -2,31 +2,41 @@ POST http://localhost:3001/contenido
 Content-Type: application/json
 
 {
-      "id": 7,
-      "poster": "./posters/7.jpg",
-      "titulo": "Guasón",
-      "categoria": "Película",
-      "gen": "Suspenso",
-      "genero": "Crimen, Suspenso",
-      "busqueda": "Guasón, The Joker, Crimen, Suspenso, Drama, DC Comics, Joaquin Phoenix, Robert De Niro, Zazie Beetz, Frances Conroy, Brett Cullen, Shea Whigham",
-      "resumen": "Arthur Fleck (Phoenix) es un hombre ignorado por la sociedad, cuya motivación en la vida es hacer reír. Pero una Serie de trágicos acontecimientos le llevarán a ver el mundo de otra forma. Película basada en el popular personaje de DC Comics Joker, conocido como archivillano de Batman, pero que en este film tomará un cariz más realista y oscuro.",
-      "temporadas": "N/A",
-      "duracion": "97 minutos",
-      "reparto": "Joaquin Phoenix, Robert De Niro, Zazie Beetz, Frances Conroy, Brett Cullen, Shea Whigham",
-      "trailer": "https://www.youtube.com/embed/zAGVQLHvwOY"
+      
+      "id": 16,
+      "poster": "./posters/16.jpg",
+      "titulo": "Westworld",
+      "categoria": "Serie",
+      "gen": "Ciencia Ficción",
+      "genero": "Western, Sci-Fi, Drama",
+      "busqueda": "Westworld, Western, Sci-Fi, Drama, Evan Rachel Wood, Thandiwe Newton, Jeffrey Wright, Tessa Thompson, Ed Harris, Luke Hemsworth, Rodrigo Santoro, Simon Quarterman, Clifton Collins Jr., Anthony Hopkins, Ingrid Bolsø Berdal, Angela Sarafyan, Shannon Woodward, Talulah Riley, Louis Herthum, Ben Barnes, Jimmi Simpson, Leonardo Nam, Aaron Paul, Vincent Cassel, Izabella Alvarez, Jeff Daniel Phillips",
+      "resumen": "'Westworld' es una oscura odisea acerca del amanecer de la conciencia artificial y la evolución del pecado. Situada en la intersección del futuro cercano y el pasado reimaginado, explora un mundo donde cada apetito humano, sin importar cuán noble o depravado, puede ser saciado. Está ambientada en un parque temático futurista dirigido por el Dr. Robert Ford (Anthony Hopkins). Las instalaciones cuentan con androides caracterizados del western americano, y gracias a ellos los visitantes pueden introducirse en cualquier tipo de fantasía por muy oscura que sea.",
+      "temporadas": "3",
+      "reparto": "Evan Rachel Wood, Thandiwe Newton, Jeffrey Wright, Tessa Thompson, Ed Harris, Luke Hemsworth, Rodrigo Santoro, Simon Quarterman, Clifton Collins Jr., Anthony Hopkins, Ingrid Bolsø Berdal, Angela Sarafyan, Shannon Woodward, Talulah Riley, Louis Herthum, Ben Barnes, Jimmi Simpson, Leonardo Nam, Aaron Paul, Vincent Cassel, Izabella Alvarez, Jeff Daniel Phillips",
+      "trailer": "https://www.youtube.com/embed/qLFBcdd6Qw0"
 }
 
 ###
 
-PATCH  http://localhost:3001/contenido/4
+PATCH  http://localhost:3001/contenido/11
 Content-Type: application/json
 
 {
  
- "titulo":"salve jebus"
-  
+"reparto":"jesus"  
             
 }
 
 ###
-DELETE http://localhost:3001/contenido/1
+DELETE http://localhost:3001/contenido/11
+
+###
+GET http://localhost:3001/contenido
+
+###
+
+GET http://localhost:3001/contenido/11
+
+###
+
+GET http://localhost:3001/contenido/titulo/jesus obregoso

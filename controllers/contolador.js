@@ -282,7 +282,7 @@ const Actualizar=async(req,res)=>{
         const ID=Number(numero.ID)
         const {gen,genero,reparto,titulo,categoria,poster,busqueda,resumen,temporadas,trailer,duracion}=req.body
         const peli=await contenido.findByPk(ID)
-        
+        const modificar={}
         if (!peli) {
             res.status(400).json({mensaje:'no hay contenido con ese ID'})
         } else {

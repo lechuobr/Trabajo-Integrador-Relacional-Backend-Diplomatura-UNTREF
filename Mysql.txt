@@ -1,0 +1,91 @@
+       TABLAS 
+
+CREATE TABLE IF NOT EXISTS `Categorias` (
+	`idCategori` int AUTO_INCREMENT NOT NULL UNIQUE,
+	`Categori_Name` varchar(15) NOT NULL,
+	PRIMARY KEY (`idCategori`)
+);
+
+CREATE TABLE IF NOT EXISTS `Generos` (
+	`Genero_ID` int AUTO_INCREMENT NOT NULL UNIQUE,
+	`Genero_Name` varchar(20) NOT NULL,
+	PRIMARY KEY (`Genero_ID`)
+);
+
+CREATE TABLE IF NOT EXISTS `Actor` (
+	`Actor_Id` int AUTO_INCREMENT NOT NULL UNIQUE,
+	`ActorName` varchar(45) NOT NULL,
+	PRIMARY KEY (`Actor_Id`)
+);
+
+CREATE TABLE IF NOT EXISTS `Contenido` (
+	`Contenido_Id` int AUTO_INCREMENT NOT NULL UNIQUE,
+	`Titulo` varchar(50) NOT NULL,
+	`Temporada` varchar(10),
+	`Resumen` varchar(1000) NOT NULL,
+	`Poster` varchar(30) NOT NULL,
+	`Genero_ID` int NOT NULL,
+	`idCategori` int NOT NULL,
+	`Trailer` varchar(50) NOT NULL,
+	`busqueda` varchar(512) NOT NULL,
+	`Duracion` varchar(15),
+	PRIMARY KEY (`Contenido_Id`)
+);
+
+CREATE TABLE IF NOT EXISTS `contenido_actor` (
+	`id_ConT_Actor` int AUTO_INCREMENT NOT NULL,
+	`Actor_Id` int NOT NULL,
+	`Contenido_Id` int,
+	PRIMARY KEY (`id_ConT_Actor`)
+);
+
+CREATE TABLE IF NOT EXISTS `gneros_contenido` (
+	`idGenConte` int AUTO_INCREMENT NOT NULL UNIQUE,
+	`Contenido_Id` int NOT NULL,
+	`Genero_ID` int NOT NULL,
+	PRIMARY KEY (`idGenConte`)
+);
+
+
+
+
+ALTER TABLE `Contenido` ADD CONSTRAINT `Contenido_fk5` FOREIGN KEY (`Genero_ID`) REFERENCES `Generos`(`id`);
+
+ALTER TABLE `Contenido` ADD CONSTRAINT `Contenido_fk6` FOREIGN KEY (`idCategori`) REFERENCES `Categorias`(`id`);
+ALTER TABLE `contenido_actor` ADD CONSTRAINT `contenido_actor_fk1` FOREIGN KEY (`Actor_Id`) REFERENCES `Actor`(`id`);
+
+ALTER TABLE `contenido_actor` ADD CONSTRAINT `contenido_actor_fk2` FOREIGN KEY (`Contenido_Id`) REFERENCES `Contenido`(`id`);
+ALTER TABLE `gneros_contenido` ADD CONSTRAINT `gneros_contenido_fk1` FOREIGN KEY (`Contenido_Id`) REFERENCES `Contenido`(`id`);
+
+ALTER TABLE `gneros_contenido` ADD CONSTRAINT `gneros_contenido_fk2` FOREIGN KEY (`Genero_ID`) REFERENCES `Generos`(`id`);
+
+
+                  VISTA MYSQL
+
+ CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `root`@`autorack.proxy.rlwy.net` 
+    SQL SECURITY DEFINER
+VIEW `railway`.`peliculas` AS
+    SELECT 
+        `p`.`Contenido_Id` AS `ID`,
+        `p`.`titulo` AS `Titulo`,
+        `p`.`temporada` AS `Temporada`,
+        `p`.`resumen` AS `Resumen`,
+        `p`.`poster` AS `Poster`,
+        GROUP_CONCAT(DISTINCT `g`.`Genero_Name`
+            SEPARATOR ';') AS `genero`,
+        `c`.`Categori_Name` AS `Categoria`,
+        `p`.`busqueda` AS `busqueda`,
+        `p`.`trailer` AS `Trailer`,
+        `p`.`duracion` AS `Duracion`,
+        GROUP_CONCAT(DISTINCT `a`.`ActorName`
+            SEPARATOR ';') AS `Reparto`
+    FROM
+        ((((`railway`.`contenido` `p`
+        JOIN `railway`.`categorias` `c` ON ((`p`.`idCategori` = `c`.`IdCategori`)))
+        JOIN `railway`.`generos` `g` ON ((`p`.`Genero_ID` = `g`.`Genero_ID`)))
+        JOIN `railway`.`contenido_actor` `ca` ON ((`p`.`Contenido_Id` = `ca`.`Contenido_Id`)))
+        JOIN `railway`.`actor` `a` ON ((`ca`.`Actor_Id` = `a`.`Actor_Id`)))
+    GROUP BY `p`.`Contenido_Id`                  
+
